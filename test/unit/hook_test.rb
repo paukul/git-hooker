@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + "/../test_helper.rb"
 
 class HookTest < Test::Unit::TestCase
   
-  test "A new hook should require a hooktype as a argument" do
+  test "Should require a hooktype as a argument when instanciated" do
     assert_raise ArgumentError do
       Hooker::Hook.new()
     end

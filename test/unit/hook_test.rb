@@ -12,9 +12,14 @@ class HookTest < Test::Unit::TestCase
     hook = stub_everything("update_hook")
 
     Hooker::UpdateHook.expects(:new).returns(hook)
-    Hooker::Hook.new(:update)
+    Hooker::Hook.new(:update, [])
   end
 
+  test "Should pass the parameters from the hook creation to its delegate" do
+    params = [1,2,3]
+    Hooker::UpdateHook.expects(:new).with(params)
+    Hooker::Hook.new(:update, params)
+  end
 end
 
 class UpdateHookTest < Test::Unit::TestCase

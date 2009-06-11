@@ -13,15 +13,10 @@ module Hooker
       end
 
       def repository
-        init_repository
+        @repository ||= Grit::Repo.new(repository_path)
       end
 
       private
-        # the repository gets only initialized once!
-        def init_repository
-          @repo ||= Grit::Repo.new(repository_path)
-        end
-
         def detect_repository_path
           separator = Regexp::escape(File::SEPARATOR)
           matchdata = caller_path.gsub(/#{separator}[^#{separator}]*\:.*$/, '').scan(/([^#{separator}]*)#{separator}/)

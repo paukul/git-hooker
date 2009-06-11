@@ -22,6 +22,13 @@ class BaseTest < Test::Unit::TestCase
   end
   
   test "Access to the Repository should be given" do
+    repo      = mock('repository')
+    repo_path = "repo_path"
+    
+    Hooker::Base.expects(:repository_path).returns(repo_path)
+    Grit::Repo.expects(:new).with(repo_path).once.returns(repo)
+    
+    Hooker::Base.repository
     Hooker::Base.repository
   end
 end

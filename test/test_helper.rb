@@ -1,10 +1,10 @@
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
+require 'hooker'
+
 require 'rubygems'
 require 'test/unit'
 require 'mocha'
 begin; require 'redgreen' unless ENV['TM_FILENAME']; rescue LoadError; end
-
-require 'hooker'
 
 # This allows you to use the 'test "something should behave that way" do' syntax for plain test/unit tests
 # See ActiveSupport::Testing::Declarative:

@@ -5,5 +5,8 @@ module Hooker
     def initialize(args)
       @ref_name, @old_revision_hash, @new_revision_hash = args[0..2]
     end
+    
+    def commits
+    end
   end
 end

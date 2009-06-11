@@ -1,6 +1,9 @@
 # w00t?
 A simple DSL for writing githooks
 
+# wtf?!
+yes, allmost nothing here yet. checkout the basic branch and see my first trys to get something to work. feel free to critique ;)
+
 # why?
 Because parsing comandline stuff and diving to manpages should not be neccassary for something that simple as hooks, at least not for the basic and most common features nearly every hook uses.
 

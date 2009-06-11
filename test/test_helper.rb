@@ -1,5 +1,8 @@
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
+require 'rubygems'
+require 'test/unit'
 require 'hooker'
+begin; require 'redgreen' unless ENV['TM_FILENAME']; rescue LoadError; end
 
 # This allows you to use the 'test "something should behave that way" do' syntax for plain test/unit tests
 # See ActiveSupport::Testing::Declarative:

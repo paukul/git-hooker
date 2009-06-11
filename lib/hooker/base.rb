@@ -20,9 +20,13 @@ module Hooker
         
         def detect_repository_path
           separator = Regexp::escape(File::SEPARATOR)
-          matchdata = caller[0].gsub(/#{separator}[^#{separator}]*\:.*$/, '').scan(/([^#{separator}]*)#{separator}/)
-          matchdata.pop if matchdata.last == ".git"
+          matchdata = caller_path.gsub(/#{separator}[^#{separator}]*\:.*$/, '').scan(/([^#{separator}]*)#{separator}/)
+          matchdata.pop if matchdata.last[0] == ".git"
           matchdata.join(File::SEPARATOR)
+        end
+        
+        def caller_path
+          caller[0]
         end
     end
   end

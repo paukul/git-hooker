@@ -4,7 +4,7 @@ module Hooker
   class Base
 
     def repository
-      self.class.init_repository
+      self.class.repository
     end
 
     class << self

@@ -1,6 +1,7 @@
 $: << File.dirname(__FILE__)
 
 require 'hooker/base'
+require 'hooker/commit'
 require 'hooker/hook'
 require 'hooker/update_hook'
 

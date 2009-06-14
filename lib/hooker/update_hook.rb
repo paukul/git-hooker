@@ -7,7 +7,7 @@ module Hooker
     end
     
     def commits
-      repository.commits_between @old_revision_hash, @new_revision_hash
+      @commits ||= Hooker::Commit.from_commits(repository.commits_between(@old_revision_hash, @new_revision_hash))
     end
   end
 end

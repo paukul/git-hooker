@@ -4,3 +4,7 @@ require 'spec'
 require 'rubygems'
 require 'test/unit'
 begin; require 'redgreen' unless ENV['TM_FILENAME']; rescue LoadError; end
+
+Spec::Runner.configure do |config|
+  config.mock_with :mocha
+end
